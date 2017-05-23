@@ -1,4 +1,4 @@
-class bpx.server.local {
+class puppetclass {
 	package { 'vim': ensure => 'installed', }
 	package { 'curl': ensure => 'installed', }
 	package { 'git': ensure => 'installed', } 
