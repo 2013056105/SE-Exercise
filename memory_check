@@ -1,7 +1,13 @@
 #!/bin/bash
 usage(){
 echo ""
-echo "INVALID FORMAT"
+echo "Usage: $0 [-c] [-w] [-e]"
+echo ""
+echo "Options:"
+echo "	-c percentage		Indicate the critical threshold percentage (Must"
+echo "				be greater than the warning threshold)"
+echo "	-w percentage		Indicate the warning threshold percentage"
+echo "	-e email_address	Indicate the email address to send the report"
 echo ""
 1>&2;
 exit;
