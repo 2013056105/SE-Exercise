@@ -31,7 +31,8 @@ while getopts ":c:w:e:" o; do
 done
 shift $((OPTIND-1))
 
-if [ -z "${c}" ] || [ -z "${w}" ] || [ -z "${e}" ]; then
+if [ -z "${c}" ] || [ -z "${w}" ] || [ -z "${e}" ] || (( $c <= $w )) ||
+	(( $c < 0 || $c > 100 )) || (( $w < 0 || $w > 100 )); then
 	usage
 fi
 
