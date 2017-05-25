@@ -38,6 +38,8 @@ if [ -z "${c}" ] || [ -z "${w}" ] || [ -z "${e}" ] || (( $c <= $w )) ||
 	usage
 else
 	if (( $mem_usage >= $c )); then
+		ps -eo pid,ppid,cmd,%mem --sort=-%mem | head -n 10
+		ps -eo pid,ppid,cmd,%mem --sort=-%mem | head -n 10 | mail -s "test" "${e}"
 		exit 2;
 	elif (( $mem_usage >= $w && $mem_usage < $c )); then
 		exit 1;
